@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            border: 1px solid #c3e6cb;
+            padding: 20px;
+            background-color: #d4edda;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        h1 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Payment Successful!</h1>
+        <p>Your transaction ID is {{ transaction_id }}</p>
+        <p>Your phonepe transaction ID is {{ providerReferenceId }}</p>
+        <p>Redirecting to the dashboard in <span id="countdown">5</span> seconds...</p>
+
+        <!-- Skip redirection link -->
+        <p><a href="{% url 'checkout' %}">Skip and go to dashboard</a></p>
+    </div>
+
+    <script>
+        var countdownElement = document.getElementById('countdown');
+        var redirectDelay = 5;  // Set the redirect delay here in seconds
+        
+        // Function to update the countdown timer
+        function updateCountdown() {
+            countdownElement.textContent = redirectDelay;
+            redirectDelay--;
+
+            if (redirectDelay < 0) {
+                redirectDelay = 0;
+                clearInterval(timer); // Stop the timer when countdown reaches 0
+                window.location.href = "{% url 'myorders' %}"; // Redirect to dashboard page
+            }
+        }
+
+        // Initial call to update countdown
+        updateCountdown();
+
+        // Set interval to update countdown every second
+        var timer = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>

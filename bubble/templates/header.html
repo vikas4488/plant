@@ -1,0 +1,99 @@
+
+{%load static %}
+<div class="f_h_head_and_search">
+    <div class="f_h_headers">
+        <div class="f_h_menu_icon_wrap">
+            <div class="f_h_menu_icon">
+                <img class="w30" src="{% static 'media/icons8-menu-50.png' %}"/>
+            </div>
+        </div>
+        <div class="f_h_logo_wrap">
+            <div class="f_h_logo">
+                <img class="f_h_logo_img" src="{% static 'media/green.png' %}"/>
+            </div>
+        </div>
+        <div class="f_h_plc_wrap">
+            {% if request.user.is_authenticated %}
+            <div class="f_h_plc_p_wrp_logout">
+                <div class="f_h_plc_p">
+                    <a href="{% url 'logout' %}">
+                        <img class="f_h_plc_p w30" src="{% static 'media/icons8-logout-50 (1).png' %}"/>
+                    </a>
+                </div>
+            </div>
+            {% else %}
+            <div class="f_h_plc_p_wrp">
+                <div class="f_h_plc_p">
+                    <img class="f_h_plc_p w30" src="{% static 'media/icons8-user-48.png' %}"/>
+                </div>
+            </div>
+            {% endif %}
+                    
+                
+            <div class="f_h_plc_l_wrp">
+                <div class="f_h_plc_l">
+                    <img class="w30" src="{% static 'media/icons8-heart-50.png' %}"/>
+                </div>
+            </div>
+            <div class="f_h_plc_c_wrp">
+                
+                    <div class="f_h_plc_c">
+                        <img class="w30" src="{% static 'media/icons8-cart-48.png' %}"/>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="f_h_search_area">
+        <form method="get" action="{% url 'flowerhome' %}" >
+            <div class="f_h_search_bar">
+                <div class="f_h_search_input_area">
+                    <input class="f_h_search_input" type="text" placeholder="Search.." name="q">
+                </div>
+                <div class="f_h_search_icon">
+                    <button type="submit">
+                        <img class="f_h_search_icon_img w30" src="{% static 'media/icons8-search-white.png' %}"/>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="f_h_banner_area">
+    <div></div>
+    <div class="f_h_banner_text_group">
+        <div class="f_h_banner_text_head">
+            Our collection
+        </div>
+        <div class="f_h_banner_text_sub_head">
+            shop
+        </div>
+    </div>
+    <div class="f_h_banner_image_area">
+        <div class="f_h_banner_image">
+            banner image
+        </div>
+    </div>
+</div>
+<div class=" main_marg">
+    <div class="f_h_home_nav_area">
+        <div class="f_h_home_nav_wrap">
+            <a href='{%url 'flowerhome' %}'>
+                <div class="f_h_home_nav_home_icon">
+                    <img class="f_h_home_nav_home_icon_img w30" src="{% static 'media/icons8-home-50.png' %}"/>
+                </div>
+            </a>
+            <div class="f_h_home_nav_greater_icon">
+                <img class="f_h_home_nav_greater_icon_img w30" src="{% static 'media/icons8-greater-than-50.png' %}"/>
+            </div>
+            <div class="f_h_home_nav_name">
+                <div class="f_h_home_nav_name_cat"></div>
+                <div class="f_h_home_nav_greater_icon_mid">
+                    <img class="f_h_home_nav_greater_icon_img w30" src="{% static 'media/icons8-greater-than-50.png' %}"/>
+                </div>
+                <div class="f_h_home_nav_name_subcat"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>

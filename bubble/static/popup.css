@@ -1,0 +1,65 @@
+.popupbody{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.popup_trans{
+    background: rgba(255, 255, 255, 0.2);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup_area_out{
+    background: lightskyblue;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 5px;
+    padding: 1px;
+    display: flex;
+    max-width: 520px;
+}
+.popup_area_in{
+    margin: 24px;
+}
+.popup_cross_bar{
+    display: flex;
+    justify-content: right;
+    margin-bottom: 3px;
+    position: relative;
+    top: -20px;
+    right: -20px;
+}
+.popup_cross{
+    background: red;
+    border-radius: 3px;
+    color: white;
+    padding: 3px 5px;
+    cursor: pointer;
+}
+.popup_head_bar{
+    background: lavender;
+    border-radius: 3px;
+    margin-bottom: 3px;
+}
+.popup_head_content{
+    padding: 3px;
+}
+.popup_content_bar{
+    margin-bottom: 5px;
+    max-height: 420px;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.popup_content{
+
+}
+.popup_action_bar{
+
+}
+.popup_action_buttons{
+    display: flex;
+    justify-content: space-between;
+}

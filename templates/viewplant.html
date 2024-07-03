@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Plants</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <h1>All Plants</h1>
+    {% if plants %}
+        <ul>
+            {% for plant in plants %}
+                <li>
+                    <strong>Name:</strong> {{ plant.name }}<br>
+                    <strong>Birthdate:</strong> {{ plant.birthdate }}<br>
+                    <strong>Is Alive:</strong> {{ plant.is_alive }}<br>
+                    <strong>Length:</strong> {{ plant.length }} cm<br>
+                    <a href="/edit-plant/{{ plant.id }}">Edit</a> | <a href="/delete-plant/{{ plant.id }}">Delete</a>
+                </li>
+                <hr>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No plants found.</p>
+    {% endif %}
+</body>
+</html>

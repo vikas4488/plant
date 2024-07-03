@@ -1,0 +1,118 @@
+.c_home {
+   padding: 10px 70px;
+}
+.c_home_wrap {
+
+}
+ .c_head_wrap {
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+ }
+ .c_head_content {}
+.c_list_wrap{}
+ .c_list_content {}
+ .c_list_single {
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid lightgray;
+    margin-top: 4px;
+    padding-bottom: 5px;
+ }
+  .c_list_single_image_wrap {}
+.c_list_single_content_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 20px;
+}
+ .c_list_single_image {
+    width: 160px;
+    height: 160px;
+    align-items: center;
+    display: flex;
+ }
+  .c_list_single_image_img {
+    width: inherit;
+    height: inherit;
+    object-fit: contain;
+  }
+  .c_list_single_content_head {
+    color: dimgray;
+  }
+.c_list_single_content_price_row{
+    display: flex;
+    font-size: smaller;
+    
+}
+ .c_list_single_content_price_real {
+    color: darkslategray;
+ }
+ .c_list_single_content_price_old {
+    margin: 0px 10px;
+    text-decoration: line-through;
+    color: darkgray;
+ }
+ .c_list_single_content_price_off {}
+.c_list_single_content_qty_row{
+    display: flex;
+    align-items: center;
+}
+ .c_list_single_content_qty_minus {
+    background: #6fd45b;
+    border: 1px solid darkgray;
+    padding: 3px 8px;
+    display: flex;
+    border-radius: 3px;
+    cursor: pointer;
+ }
+ .c_list_single_content_qty_number {
+    margin: 0px 10px;
+ }
+ .c_list_single_content_qty_plus {
+    background: #6fd45b;
+    border: 1px solid darkgray;
+    padding: 3px 8px;
+    display: flex;
+    border-radius: 3px;
+    cursor: pointer;
+ }
+ .c_billing{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+ }
+ .c_final_price {
+    margin: 5px 0px;
+ }
+ .c_buy_now {
+   display: flex;
+    justify-content: right;
+ }
+ .c_buy_now button {
+    background: #22990b;
+    border: 1px solid gray;
+    border-radius: 2px;
+    padding: 4px 10px;
+    color: white;
+ }
+ .c_buy_now button:hover {}
+ .c_buy_now button:active {}
+ .c_buy_now button:focus {}
+
+ .c_list_single_price_total_row {
+    display: flex;
+    font-size: small;
+    color: dimgray;
+ }
+.c_list_single_price_total_rs {}
+.c_list_single_price_total_into{
+    color: darkgray;
+    margin-left: 4px;
+}
+ .c_list_single_price_total_qty {
+    margin: 0px 3px;
+ }
+.c_list_single_price_total {}
+
+

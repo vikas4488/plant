@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{%load static %}
+{% block content%}
+<div class="f_h_page_item_wrap_out">
+    <div class="f_h_page_item_wrap_in">
+        {% for fav in page_obj.object_list %}
+        <div class="f_h_page_item_single_wrap_out"><!--this div will be reaeated-->
+            <div class="f_h_page_item_single_wrap_in">
+                <div class="f_h_page_item_single_image_wrap">
+                    <div class="f_h_page_item_single_image">
+                        <img class="f_h_page_item_single_image_img" src="{{fav.flowerob.image.url}}"/>
+                    </div>
+                </div>
+                <div class="f_h_page_item_single_offlike_wrap">
+                    <div class="f_h_page_item_single_off_wrap">
+                        <div class="f_h_page_item_single_off">
+                            {{fav.flowerob.offvalue}}% off
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="f_h_page_item_single_product_info">
+                    {{fav.flowerob.name}}
+                </div>
+                <div class="f_h_page_item_single_price_newold">
+                    <div class="f_h_page_item_single_price_new">
+                    Rs. {{fav.flowerob.price}}
+                    </div>
+                    <div class="f_h_page_item_single_price_old">
+                    Rs. 1060
+                    </div>
+                </div>
+                <form>
+                    {% csrf_token %}
+                    <input type="hidden" name="flowerob_id" value="{{fav.flowerob.id}}" />
+                    <div class="f_h_page_item_single_add_to_cart_wrap {{fav.is_carted}}">
+                        <img class="f_h_page_item_single_add_to_cart_img" src="{% static 'media/icons8-cart-50.png' %}"/>
+                        <div class="f_h_page_item_single_add_to_cart">
+                            add to cart
+                        </div>
+                        <div class="f_h_page_item_single_remove_from_cart">
+                            remove
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div><!--this div will be reaeated end here-->
+        {% endfor %}
+        
+    </div>
+</div>
+{% include "pagination.html" %}
+
+{%endblock content%}

@@ -1,0 +1,180 @@
+.myo_home {
+   padding: 10px 70px;
+}
+.myo_home_wrap {
+
+}
+ .myo_head_wrap {
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+ }
+ .myo_head_content {}
+.myo_list_wrap{}
+ .myo_list_content {}
+ .myo_list_single {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 4px;
+    padding-bottom: 5px;
+ }
+  .myo_list_single_image_wrap {}
+.myo_list_single_content_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 20px;
+}
+ .myo_list_single_image {
+    width: 60px;
+    height: 60px;
+    align-items: center;
+    display: flex;
+ }
+  .myo_list_single_image_img {
+    width: inherit;
+    height: inherit;
+    object-fit: contain;
+  }
+  .myo_list_single_content_head {
+    color: dimgray;
+  }
+.myo_list_single_content_price_row{
+    display: flex;
+    font-size: smaller;
+    
+}
+ .myo_list_single_content_price_real {
+    color: darkslategray;
+ }
+ .myo_list_single_content_price_old {
+    margin: 0px 10px;
+    text-decoration: line-through;
+    color: darkgray;
+ }
+ .myo_list_single_content_price_off {}
+.myo_list_single_content_qty_row{
+    display: flex;
+    align-items: center;
+}
+ .myo_list_single_content_qty_minus {
+    background: #6fd45b;
+    border: 1px solid darkgray;
+    padding: 3px 8px;
+    display: flex;
+    border-radius: 3px;
+    cursor: pointer;
+ }
+ .myo_list_single_content_qty_number {
+    margin: 0px 10px;
+ }
+ .myo_list_single_content_qty_plus {
+    background: #6fd45b;
+    border: 1px solid darkgray;
+    padding: 3px 8px;
+    display: flex;
+    border-radius: 3px;
+    cursor: pointer;
+ }
+ .myo_billing{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+ }
+ .myo_final_price {
+    margin: 5px 0px;
+ }
+ .myo_buy_now {
+   display: flex;
+    justify-content: right;
+ }
+ .myo_buy_now button {
+    background: #22990b;
+    border: 1px solid gray;
+    border-radius: 2px;
+    padding: 4px 10px;
+    color: white;
+ }
+ .myo_buy_now button:hover {}
+ .myo_buy_now button:active {}
+ .myo_buy_now button:focus {}
+
+ .myo_list_single_price_total_row {
+    display: flex;
+    font-size: small;
+    color: dimgray;
+ }
+.myo_list_single_price_total_rs {}
+.myo_list_single_price_total_into{
+    color: darkgray;
+    margin-left: 4px;
+}
+ .myo_list_single_price_total_qty {
+    margin: 0px 3px;
+ }
+.myo_list_single_price_total {}
+.myo_order_wrap{
+   
+}
+.myo_perorder_total{
+   display: flex;
+   justify-content: right;
+}
+.myo_order_wrap_devider{
+border-bottom: 1px solid lightgray;
+display: flex;
+justify-content: space-between;
+}
+.myo_details_vertical{
+   border-left: 1px solid;
+}
+ .myo_details_content {
+   display: flex;
+ }
+  .myo_details_mp_value {}
+  .myo_details_discount_value {}
+  .myo_details_final_value {
+   border-top: 1px solid;
+  }
+  .myo_details_mp {}
+  .myo_details_discount {}
+  .myo_details_final {
+   border-top: 1px solid;
+  }
+  .myo_label{
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   text-align: right;
+   margin-right: 10px;
+  }
+  .myo_value{
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   text-align: right;
+  }
+  .myo_top_headers{
+   display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  @media screen and (max-width: 600px) {
+   .myo_top_headers,.myo_order_wrap_devider{
+      flex-direction: column;
+   }
+   .myo_home {
+      padding: 10px 10px;
+  }
+  .myo_details_content {
+   display: flex;
+   justify-content: right;
+}
+  }
+  .myo_trid{
+
+  }
+.myo_status{
+
+}
+

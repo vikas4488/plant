@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{%load static %}
+{% block content%}
+<div class="myo_home">
+    <div class="myo_home_wrap">
+        <div class="myo_head_wrap">
+            <div class="myo_head_content">
+                My Orders
+            </div>
+        </div>
+        <div class="myo_list_wrap">
+            <div class="myo_list_content">
+                {% for item in orders %}
+                <div class="myo_top_headers">
+                    <div class="myo_orderDate">Order on : {{item.transectiondate}}</div>
+                    <div class="myo_trid">transection id : {{item.transactionId}}</div>
+                    <div class="myo_status">order status : {{item.status}}</div>
+                    
+                </div>
+                    <div class="myo_order_wrap_devider">
+                        <div class="myo_order_wrap">
+                            {% for order in item.tritems %}
+                                <div class="myo_list_single">
+                                    <div class="myo_list_single_image_wrap">
+                                        <form class="details_from_class" method="post" action="plantDetails">
+                                            {% csrf_token %}<!--plese refere this form submit in flowerhome.js-->
+                                            <input type="hidden" name="flowerid" value="{{order.flower.id}}" />
+                                            <div class="myo_list_single_image"> 
+                                                <img class="myo_list_single_image_img" src="{{order.flower.image}}"/>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="myo_list_single_content_right">
+                                        <div class="myo_list_single_content_head">
+                                            {{order.flower.name}}
+                                        </div>
+                                        <div class="myo_list_single_content_price_row">
+                                            <div class="myo_list_single_content_price_real">
+                                                Rs. {{order.newprice}}
+                                            </div>
+                                            <div class="myo_list_single_content_price_old">
+                                                Rs. {{order.amount}}
+                                            </div>
+                                            <div class="myo_list_single_content_price_off">
+                                                {{order.offvalue}} % off
+                                            </div>
+                                        </div>
+                                        <div class="myo_list_single_price_total_row">
+                                            <div class="myo_list_single_price_total_rs">
+                                            Total Rs. {{order.newprice}}
+                                            </div>
+                                            <div class="myo_list_single_price_total_into">
+                                                X 
+                                            </div>
+                                            <div class="myo_list_single_price_total_qty">
+                                                {{order.quantity}}
+                                            </div>
+                                            <div class="myo_list_single_price_total">
+                                            = {{order.itemtotal}}
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            
+                        </div>
+                        <div class="myo_details_vertical">
+                        </div>
+                        <div class="myo_details_content">
+                            <div class="myo_label">
+                                <div class="myo_details_mp">
+                                    marked price :
+                                </div>
+                                <div class="myo_details_discount">
+                                    total discount:
+                                </div>
+                                <div class="myo_details_final">
+                                    total amount:
+                                </div>
+                            </div>
+                            <div class="myo_value">
+                                <div class="myo_details_mp_value">
+                                    {{ item.total_mrp }}
+                                </div>
+                                <div class="myo_details_discount_value">
+                                    {{ item.total_discount }}
+                                </div>
+                                <div class="myo_details_final_value">
+                                    {{ item.total_discounted_price }}
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                {% endfor %}
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var csrftoken='{{csrf_token}}';
+</script>
+{%endblock content%}

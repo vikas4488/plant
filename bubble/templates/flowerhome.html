@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{%load static %}
+
+    {% block content%}
+    <div class="f_h_main">
+        <div class="f_h_whole_content">
+            <div class="f_h_title_and_content main_marg">
+                <div class="f_h_page_title_wrap">
+                    <div class="f_h_page_title">
+                        MEDICAL HERB & KITCHEN PLANTS C14
+                    </div>
+                </div>
+                <!--
+                <div class="f_h_page_operation_wrap">
+                    <div class="f_h_page_operation">
+                        <div class="f_h_page_operation_filter">
+                            filter icon
+                        </div>
+                        <div class="f_h_page_operation_showing_result">
+                            showing 16 out of 158 results
+                        </div>
+                        
+                        <div class="f_h_page_operation_listview_girdview">
+                            <div class="f_h_page_operation_short_dropdonw">
+                                sort
+                            </div>
+                            <div class="f_h_page_operation_listview">
+                                lv
+                            </div>
+                            <div class="f_h_page_operation_girdview">
+                                gv
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                -->
+                
+                <div class="f_h_page_item_wrap_out">
+                    <div class="f_h_page_item_wrap_in">
+                        {% for flower in page_obj.object_list %}
+                        <div class="f_h_page_item_single_wrap_out"><!--this div will be reaeated-->
+                            <div class="f_h_page_item_single_wrap_in">
+                                <div class="f_h_page_item_single_image_wrap">
+                                    <form class="details_from_class" method="post" action="plantDetails">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="flowerid" value="{{flower.id}}" />
+                                        <div class="f_h_page_item_single_image">
+                                            <img class="f_h_page_item_single_image_img" src="{{flower.image.url}}"/>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="f_h_page_item_single_offlike_wrap">
+                                    <div class="f_h_page_item_single_off_wrap">
+                                        <div class="f_h_page_item_single_off">
+                                            {{flower.offvalue}}% off
+                                        </div>
+                                    </div>
+                                    <div class="f_h_page_item_single_like_wrap">
+                                        <form class="fav_from_class">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="flowerob_id" value="{{flower.id}}" />
+                                            <div class="f_h_page_item_single_like {{flower.is_favorite}}">
+                                                <img class="f_h_page_item_single_like_img" src="{% static 'media/icons8-heart-50.png' %}"/>
+                                                <img class="f_h_page_item_single_like_red_img" src="{% static 'media/icons8-red-heart-50.png' %}"/>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <form class="details_from_class" method="post" action="plantDetails">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="flowerid" value="{{flower.id}}" />
+                                    <div class="f_h_page_item_single_product_info">
+                                        {{flower.name}}
+                                    </div>
+                                </form>
+                                <div class="f_h_page_item_single_price_newold">
+                                    <div class="f_h_page_item_single_price_new">
+                                    Rs. {{flower.new_price}}
+                                    </div>
+                                    <div class="f_h_page_item_single_price_old">
+                                    Rs. {{flower.price}}
+                                    </div>
+                                </div>
+                                <form>
+                                    {% csrf_token %}
+                                    <input type="hidden" name="flowerob_id" value="{{flower.id}}" />
+                                    <div class="f_h_page_item_single_add_to_cart_wrap {{flower.is_carted}}">
+                                        <img class="f_h_page_item_single_add_to_cart_img" src="{% static 'media/icons8-cart-50.png' %}"/>
+                                        <div class="f_h_page_item_single_add_to_cart">
+                                            add to cart
+                                        </div>
+                                        <div class="f_h_page_item_single_remove_from_cart">
+                                            remove
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div><!--this div will be reaeated end here-->
+                        {% endfor %}
+                        
+                    </div>
+                </div>
+                {% include "pagination.html" %}
+            </div>
+        </div>
+    </div>
+    
+    {% include "loginsignup.html" %}
+
+    <script>
+    var fav_form_url='{% url 'favurl' %}';
+    var cart_form_url='{% url 'carturl' %}';
+    var cart_page_url='{% url 'cart' %}';
+    var fav_page_url='{% url 'favpage' %}';
+    var catss='{{catss}}';
+    var subcatss='{{subcatss}}';
+    console.log(catss);
+    </script>
+    {%endblock content%}

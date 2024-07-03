@@ -1,0 +1,137 @@
+
+
+<div class="l_s_wrap ">
+    <div class="l_s_bg">
+        <div class="l_s_content_area">
+            <div class="l_s_head_wrap">
+                <div class="l_s_head_signin_wrap">
+                    <div class="l_s_singin">
+                        Sign In
+                    </div>
+                </div>
+                <div class="l_s_head_signup_wrap">
+                    <div class="l_s_singup">
+                        Sign Up
+                    </div>
+                </div>
+            </div>
+            <div class="l_s_message_wrap">
+                <div class="l_s_message_cross">
+                    <div class="l_s_message_cross_text">
+                        x
+                    </div>
+                </div>
+                <div class="l_s_message_content_wrap">
+                    <div class="l_s_message_content">
+                        
+                    </div>
+                </div>
+            </div>
+                <div class="l_s_form_wrap">
+                    <div class="l_s_form_signin">
+                        <form id="signin_form_id">
+                            {% csrf_token %}
+                            <input type="hidden" value="newlogin" name="action" />
+                            <div class="l_s_form_signin_username_wrap">
+                                <div class="l_s_form_signin_username_label">
+                                    User name
+                                </div>
+                                <div class="l_s_form_signin_username_imput">
+                                    <input class="clr_signin" type="text" name="sigin_username">
+                                </div>
+                            </div>
+                            <div class="l_s_form_signin_email_label">
+                                <div class="l_s_form_signin_password_label">
+                                    Enter your password
+                                </div>
+                                <div class="l_s_form_signin_password_imput">
+                                    <input class="clr_signin" type="password" name="sigin_password">
+                                </div>
+                            </div>
+                            <div class="l_s_form_signin_buttons">
+                                <div class="l_s_form_signin_button_signin">
+                                    <button>sign in</button>
+                                </div>
+                                <div class="l_s_form_signin_button_forgot_password">
+                                    Forget Password
+                                </div>
+                                <div class="l_s_form_button_cancel">
+                                    cancle
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="l_s_form_signup">
+                        <form id="signup_form_id" >
+                            {% csrf_token %}
+                            <input type="hidden" value="newsignup" name="action" />
+                            <div class="l_s_form_signup_username_wrap">
+                                <div class="l_s_form_signup_username_label">
+                                    Enter new user name
+                                </div>
+                                <div class="l_s_form_signup_username_imput">
+                                    <input class="clr_signup" type="text" name="sigup_username">
+                                </div>
+                            </div>
+                            <div class="l_s_form_signup_fname_wrap">
+                                <div class="l_s_form_signup_fname_label">
+                                    Enter first name
+                                </div>
+                                <div class="l_s_form_signup_fname_imput">
+                                    <input class="clr_signup" type="text" name="sigup_fname" />
+                                </div>
+                            </div>
+                            <div class="l_s_form_signup_lname_wrap">
+                                <div class="l_s_form_signup_lname_label">
+                                    Enter last name
+                                </div>
+                                <div class="l_s_form_signup_lname_imput">
+                                    <input class="clr_signup" type="text" name="sigup_lname" />
+                                </div>
+                            </div>
+                            <div class="l_s_form_signup_email_wrap">
+                                <div class="l_s_form_signin_email_label">
+                                    Enter email address
+                                </div>
+                                <div class="l_s_form_signup_email_imput">
+                                    <input class="clr_signup" type="email" name="sigup_email" />
+                                </div>
+                            </div>
+                            <div class="l_s_form_signup_password_wrap">
+                                <div class="l_s_form_signup_password_label">
+                                    Enter new password
+                                </div>
+                                <div class="l_s_form_signup_password_imput">
+                                    <input class="clr_signup" type="password" name="sigup_password" /> 
+                                </div>
+                            </div>
+                            <div class="l_s_form_signup_password2_wrap">
+                                <div class="l_s_form_signup_password2_label">
+                                    Enter password again
+                                </div>
+                                <div class="l_s_form_signup_password2_imput">
+                                    <input class="clr_signup" type="password" name="sigup_password2" />
+                                </div>
+                            </div>
+                            <div class="l_s_form_signup_buttons">
+                                <div class="l_s_form_signup_button_signup">
+                                    <button>Sign up</button>
+                                </div>
+                                <div class="l_s_form_signup_button_signup">
+                                    <div></div>
+                                </div>
+                                <div class="l_s_form_button_cancel">
+                                    cancle
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var signupurl='{% url 'newsignup' %}';
+    var signinurl='{% url 'newlogin' %}';
+</script>

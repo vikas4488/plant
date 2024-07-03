@@ -1,0 +1,88 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'popup.css' %}">
+<div class="popupbody">
+    <div class="popup_trans">
+        <div class="popup_area_out">
+            <div class="popup_area_in">
+                <div class="popup_cross_bar">
+                    <div class="popup_cross">
+                        X
+                    </div>
+                </div>
+                <div class="popup_head_bar">
+                    <div class="popup_head_content">
+                        are you sure are you sure are you sure are you sure are you sure are you sure are you sure are you sure are you sure are you sure 
+                    </div>
+                </div>
+                <div class="popup_content_bar">
+                    <div class="popup_content">
+                        <form name="PlantForm" action="save_plant" method="post">
+                            {% csrf_token %}
+                            <label for="plant_name">Name:</label><br>
+                            <input type="text" id="plant_name" name="plant_name"><br><br>
+                    
+                            <label for="birthdate">Birthdate:</label><br>
+                            <input type="date" id="birthdate" name="birthdate"><br><br>
+                    
+                            <label for="is_alive">Is Alive:</label><br>
+                            <select id="is_alive" name="is_alive">
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select><br><br>
+                    
+                            <label for="length">Length (in cm):</label><br>
+                            <input type="number" id="length" name="length" min="0"><br><br>
+                    
+                            <input type="submit" value="Save">
+                        </form>
+                        <form name="PlantForm" action="save_plant" method="post">
+                            {% csrf_token %}
+                            <label for="plant_name">Name:</label><br>
+                            <input type="text" id="plant_name" name="plant_name"><br><br>
+                    
+                            <label for="birthdate">Birthdate:</label><br>
+                            <input type="date" id="birthdate" name="birthdate"><br><br>
+                    
+                            <label for="is_alive">Is Alive:</label><br>
+                            <select id="is_alive" name="is_alive">
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select><br><br>
+                    
+                            <label for="length">Length (in cm):</label><br>
+                            <input type="number" id="length" name="length" min="0"><br><br>
+                    
+                            <input type="submit" value="Save">
+                        </form>
+                        <form name="PlantForm" action="save_plant" method="post">
+                            {% csrf_token %}
+                            <label for="plant_name">Name:</label><br>
+                            <input type="text" id="plant_name" name="plant_name"><br><br>
+                    
+                            <label for="birthdate">Birthdate:</label><br>
+                            <input type="date" id="birthdate" name="birthdate"><br><br>
+                    
+                            <label for="is_alive">Is Alive:</label><br>
+                            <select id="is_alive" name="is_alive">
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select><br><br>
+                    
+                            <label for="length">Length (in cm):</label><br>
+                            <input type="number" id="length" name="length" min="0"><br><br>
+                    
+                            <input type="submit" value="Save">
+                        </form>
+                    </div>
+                </div>
+                <div class="popup_action_bar">
+                    <div class="popup_action_buttons">
+                        <button class="okbtn">ok</button>
+                        <button class="cancelbtn">cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

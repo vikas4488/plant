@@ -1,0 +1,48 @@
+.user_full_wrap{
+    display: flex;
+    justify-content: end;
+    color: gray;
+    margin: 5px 70px;
+}
+.user_full_text{
+
+}
+
+.u_p_wrap{
+    display: flex;
+    justify-content: center;
+}
+.u_p_content{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+.u_p_ipfileds{
+    margin: 5px 0px;
+}
+.u_p_ipfileds_label{
+    margin-bottom: 3px;
+}
+.u_p_ipfileds_ip{
+
+}
+.u_p_ipfileds_ip input{
+    width:300px;
+}
+.u_p_ipfileds_checkbox{
+    display: flex;
+    justify-content: space-evenly
+}
+.u_p_ipfileds_label_checkbox{
+
+}
+.u_p_ipfileds_ip_checkbox{
+
+}
+.u_p_ipfileds_ip_checkbox input{
+    
+}
+.u_p_action_buttons{
+    display: flex;
+    justify-content: end;
+}

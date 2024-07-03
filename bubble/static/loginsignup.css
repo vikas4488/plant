@@ -1,0 +1,195 @@
+.l_s_wrap{
+    background: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    cursor:default;
+    align-items: start;
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+.l_s_wrap_regpopup, .l_s_wrap_loginpopup{
+  display: flex;
+}
+  .l_s_bg{
+    background: white;
+    display: flex;
+    margin-top: 100px;
+  }
+  .l_s_content_area{
+    margin: 10px 40px;
+  }
+ .l_s_head_wrap {
+    display: flex;
+    justify-content: space-evenly;
+ }
+  .l_s_head_signin_wrap{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+ .l_s_singin {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #3cc962;
+    padding-bottom: 5px;
+    color: #3cc962;
+ }
+ .l_s_singin_toggle{
+    border-bottom: 1px solid darkgray;
+    color: darkgray;
+ }
+ .l_s_signin_underline {}
+
+  .l_s_head_signup_wrap{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+ .l_s_singup {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid darkgray;
+    padding-bottom: 5px;
+    color: darkgray;
+ }
+ .l_s_singup_toggle{
+    border-bottom: 2px solid #3cc962;
+    color: #3cc962;
+ }
+ .l_s_signup_underline {}
+ @media screen and (max-width: 600px) {
+  .l_s_form_wrap{
+    width: auto !important;
+  }
+ }
+  .l_s_form_wrap{
+    width: 450px;
+    font-size: small;
+    color: darkgray;
+    font-family: cursive;
+  }
+ .l_s_form_signin {}
+ .l_s_form_signup {
+    display: none;
+ }
+ .l_s_form_signup > form > div,.l_s_form_signin > form > div {
+    margin: 10px 0px;
+ }
+
+  .l_s_form_signin_email_wrap{}
+  .l_s_form_signin_email_imput{}
+  .l_s_form_signin_email_imput input {}
+.l_s_form_wrap input{
+    width: 100%;
+    border: solid 1px rgb(174, 174, 174);
+    height: 25px;
+    border-radius: 3px;
+    margin-top: 2px;
+    padding: 0px 10px;
+}
+.l_s_form_wrap input:focus{
+    outline: none;
+    border: solid 1px #3cc962;
+}
+  .l_s_form_signin_email_label{}
+  .l_s_form_signin_password_label {}
+  .l_s_form_signin_password_imput {}
+
+ .l_s_form_signin_buttons {
+   margin-top: 15px;
+   display: flex;
+   justify-content: space-between;
+ }
+  .l_s_form_signin_button_signin button{
+   background: lightseagreen;
+   color: white;
+   border: 1px solid gray;
+   border-radius: 3px;
+   padding: 5px 10px;
+  }
+ .l_s_form_signin_button_forgot_password {}
+ .l_s_form_signin_buttons button {}
+ .l_s_form_signin_buttons button:hover {}
+ .l_s_form_signin_buttons button:active {}
+ .l_s_form_signin_buttons button:focus {}
+  .l_s_form_signup_fname_wrap{}
+ .l_s_form_signup_fname_label {}
+ .l_s_form_signup_fname_imput {}
+
+ .l_s_form_signup_lname_wrap {}
+.l_s_form_signup_lname_label {}
+ .l_s_form_signup_lname_imput {}
+ .l_s_form_signup_lname_wrap input {
+ }
+ .l_s_form_signup_email_wrap {}
+ .l_s_form_signup_email_wrap {}
+.l_s_form_signup_email_imput {}
+ .l_s_form_signup_email_wrap input {}
+ .l_s_form_signup_password_wrap {}
+  .l_s_form_signup_password_label {}
+ .l_s_form_signup_password_imput {}
+ .l_s_form_signup_password_wrap input {}
+ .l_s_form_signup_buttons {
+   margin-top: 15px;
+   display: flex;
+   justify-content: space-between;
+ }
+ .l_s_form_signup_button_signup {}
+ .l_s_form_signup_button_forgot_password {}
+ .l_s_form_signup_button_signup button {
+   background: lightseagreen;
+   color: white;
+   border: 1px solid gray;
+   border-radius: 3px;
+   padding: 5px 10px;
+ }
+ .l_s_form_button_cancel {
+   background: red;
+   color: white;
+   border: 1px solid gray;
+   border-radius: 3px;
+   padding: 5px 10px;
+ }
+ .l_s_form_signup_buttons button:hover {}
+ .l_s_form_signup_buttons button:active {}
+ .l_s_form_signup_buttons button:focus {}
+
+ .l_s_message_wrap {
+    padding: 5px 10px 10px 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: none;
+ }
+ .l_s_message_cross {
+  display: flex;
+  justify-content: end;
+ }
+ .l_s_message_cross_text {
+  color: red;
+ }
+ .l_s_message_content_wrap {}
+ .l_s_message_content {
+  color: darkslategray;
+ }
+ .l_s_should_success{
+  display: block;
+  background: #b8f5c8;
+ }
+ .l_s_should_warning{
+  display: block;
+  background: #eff5b8;
+ }
+ .l_s_should_danger{
+  display: block;
+background:#fabbc5;
+ }
+
+

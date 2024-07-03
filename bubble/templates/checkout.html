@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout</title>
+</head>
+<body>
+    <h1>Checkout</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="amount">Amount (in INR):</label>
+        <input type="text" name="amount" id="amount" required>
+        <button type="submit">Pay with PhonePe</button>
+    </form>
+</body>
+</html>

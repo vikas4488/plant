@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            border: 1px solid #f5c6cb;
+            padding: 20px;
+            background-color: #f8d7da;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        h1 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Error in PhonePe Payment Initiation</h1>
+        <p>{{ message }}</p>
+
+        <p>Redirecting in <span id="countdown">5</span> seconds...</p>
+
+    <!-- Skip redirection link -->
+    <p><a href="{% url 'checkout' %}">Skip and go back to checkout</a></p>
+    </div>
+
+    <script>
+        var countdownElement = document.getElementById('countdown');
+        var redirectDelay = 5;
+        
+        // Function to update the countdown timer
+        function updateCountdown() {
+            countdownElement.textContent = redirectDelay;
+            redirectDelay--;
+
+            if (redirectDelay < 0) {
+                redirectDelay = 0;
+            }
+
+            if (redirectDelay === 0) {
+                clearInterval(timer); // Stop the timer when countdown reaches 0
+                window.location.href = "{% url 'checkout' %}";
+            }
+        }
+
+        // Initial call to update countdown
+        updateCountdown();
+
+        // Set interval to update countdown every second
+        var timer = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>

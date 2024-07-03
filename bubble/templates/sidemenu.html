@@ -1,0 +1,81 @@
+{% load static %}
+<div class="f_h_side_menu_wrap">
+    <div class="f_h_side_menu_background">
+        <div class="f_h_side_menu_content_area">
+            <div class="f_h_side_menu_close_wrap">
+                <div class="f_h_side_menu_close">
+                    X
+                </div>
+            </div>
+            <div class="f_h_side_menu_header_wrap margleft10">
+                <div class="f_h_side_menu_header">
+                    MENU
+                </div>
+            </div>
+            <div class="f_h_side_menu_hr">
+                <hr>
+            </div>
+            <div class="f_h_side_menu_scroll_area">
+                {% for category in categories %}
+                <div class="f_h_side_menu_row_wrap">
+                    <div class="f_h_side_menu_row_head margleft10">
+                        <div class="f_h_side_menu_row_head_text">
+                            <a href="?catId={{ category.id }}">
+                            {{ category.name }}
+                            </a>
+                        </div>
+                        <div class="f_h_side_menu_row_head_icon">
+                            +
+                        </div>
+                    </div>
+                    <div class="f_h_side_menu_row_hr">
+                        <hr>
+                    </div>
+                    <div class="f_h_side_menu_row_sub_menu margleft10">
+                        {% for subcategory in category.subcategories.all %}
+                        <div class="f_h_side_menu_row_sub_menu_text">
+                            <a href="?subcatId={{ subcategory.id }}">
+                            {{ subcategory.name }}
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="f_h_side_menu_row_hr">
+                        <hr>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="f_h_side_menu_row_wrap">
+                    <div class="f_h_side_menu_row_head margleft10">
+                        <div class="f_h_side_menu_row_head_text">
+                            CALL:+917008529481
+                        </div>
+                    </div>
+                    <div class="f_h_side_menu_row_hr">
+                        <hr>
+                    </div>
+                </div>
+                <div class="f_h_side_menu_row_wrap">
+                    <div class="f_h_side_menu_row_head margleft10">
+                        <div class="f_h_side_menu_row_head_text">
+                            EMAIL vikas04488@gmil.com
+                        </div>
+                    </div>
+                    <div class="f_h_side_menu_row_hr">
+                        <hr>
+                    </div>
+                </div>
+                <div class="f_h_side_menu_row_wrap">
+                    <div class="f_h_side_menu_row_head margleft10">
+                        <div class="f_h_side_menu_row_head_text">
+                            LOGIN
+                        </div>
+                    </div>
+                    <div class="f_h_side_menu_row_hr">
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

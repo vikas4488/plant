@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{%load static %}
+{% block content%}
+<div class="c_home">
+    <div class="c_home_wrap">
+        <div class="c_head_wrap">
+            <div class="c_head_content">
+                Cart
+            </div>
+        </div>
+        <div class="c_list_wrap">
+            <div class="c_list_content">
+                {% for cart in carts %}
+                <div class="c_list_single">
+                    <div class="c_list_single_image_wrap">
+                        <div class="c_list_single_image">
+                            <img class="c_list_single_image_img" src="{{cart.flowerob.image.url}}"/>
+                        </div>
+                    </div>
+                    <div class="c_list_single_content_right">
+                        <div class="c_list_single_content_head">
+                            {{cart.flowerob.name}}
+                        </div>
+                        <div class="c_list_single_content_price_row">
+                            <div class="c_list_single_content_price_real">
+                                Rs. {{cart.newprice}}
+                            </div>
+                            <div class="c_list_single_content_price_old">
+                                Rs. {{cart.flowerob.price}}
+                            </div>
+                            <div class="c_list_single_content_price_off">
+                                {{cart.flowerob.offvalue}} % off
+                            </div>
+                        </div>
+                        <div class="c_list_single_price_total_row">
+                            <div class="c_list_single_price_total_rs">
+                               Total Rs. {{cart.newprice}}
+                            </div>
+                            <div class="c_list_single_price_total_into">
+                                 X 
+                            </div>
+                            <div class="c_list_single_price_total_qty">
+                                {{cart.quantity}}
+                            </div>
+                            <div class="c_list_single_price_total">
+                               = {{cart.itemtotal}}
+                            </div>
+                        </div>
+                        <div class="c_list_single_content_qty_row">
+                            
+                            <div class="c_list_single_content_qty_minus plus_or_minus_cart" oldQty="{{cart.quantity}}" newPrice="{{cart.newprice}}" doaction="minus" flowerId="{{cart.flowerob_id}}">
+                                -
+                            </div>
+                            <div class="c_list_single_content_qty_number">
+                                {{cart.quantity}}
+                            </div>
+                            <div class="c_list_single_content_qty_plus plus_or_minus_cart" oldQty="{{cart.quantity}}" newPrice="{{cart.newprice}}" doaction="plus" flowerId="{{cart.flowerob_id}}">
+                                +
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                
+
+            </div>
+        </div>
+        <div class="c_billing">
+            <form method="post" action="{% url 'checkout' %}" >
+                <div class="c_final_price">
+                    Total cart value is (in INR): <span class="c_final_price_value">{{total_price}}</span>
+                        {% csrf_token %}
+                        <input type="hidden" name="amount" id="amount" value="{{total_price}}" required>
+                </div>
+                <div class="c_buy_now">
+                    <button>Buy now</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    var updateCartUrl='{% url 'updateCart' %}';
+    var csrftoken='{{csrf_token}}';
+</script>
+{%endblock content%}

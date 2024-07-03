@@ -1,0 +1,51 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'loginsignup.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'flowerhome.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'loading.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'cart.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'myorders.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+    <script type="text/javascript" src="{% static 'jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'flowerhome.js' %}"></script>
+    <script src="{% static 'loginsignup.js' %}"></script>
+    <script src="{% static 'cart.js' %}"></script>
+    <title>My Site</title>
+  </head>
+  <body>
+  	<header>
+  	</header>
+  	<main>
+      <script>
+        var user_authenticated ='{{request.user.is_authenticated}}' ;
+      </script>
+{% if request.user.is_authenticated %}
+<div class="user_full_wrap">
+  <div class="user_full_text">
+  Welcome {{ request.user.get_full_name }}
+  </div>
+</div>
+ {% endif %}
+ {% include "header.html" %}	    
+	    {%block content%} 
+	    {%endblock content%}
+      <div class="lbg">
+        <div class="loading_background">
+          <div class="loader"><div>
+        </div>
+    </div>
+  	</main>
+	
+  </body>
+  {% include "sidemenu.html" %}
+  <script>
+    var fav_form_url='{% url 'favurl' %}';
+    var cart_form_url='{% url 'carturl' %}';
+    var cart_page_url='{% url 'cart' %}';
+    var fav_page_url='{% url 'favpage' %}';
+    </script>
+</html>

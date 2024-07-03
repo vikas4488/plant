@@ -1,0 +1,72 @@
+{% load static %}
+<div class="f_h_pagination_wrap">
+    
+    <div class="f_h_pagination_left_arrow marg10">
+        {% if page_obj.number > 1 %}
+        <a href="?{{ subquery }}page={{ page_obj.previous_page_number }}">
+            <img class="f_h_pagination_left_arrow_img" src="{% static 'media/icons8-left-arrow-50.png' %}"/>
+            <div class="f_h_pagination_prev">Prev</div>  
+        </a>  
+        {% else %}
+        <img class="f_h_pagination_left_arrow_img" src="{% static 'media/icons8-left-arrow-50.png' %}"/>
+        <div class="f_h_pagination_prev darkgray">Prev</div>  
+        {% endif %}               
+    </div>
+    
+    {% if page_obj.number > 3 %}
+    <div class="f_h_pagination_left_fisrt marg10 ">
+        <a href="?page=1">1</a>
+    </div>
+    {% endif %}
+    {% if page_obj.number > 4 %}
+    <div class="f_h_pagination_left_dots marg10">
+    ...
+    </div>
+    {% endif %}
+    {% if page_obj.number|add:-2 > 0 %}
+    <div class="f_h_pagination_one marg10">
+        <a href="?{{ subquery }}page={{ page_obj.number|add:-2 }}">{{ page_obj.number|add:-2 }}</a>
+    </div>
+    {% endif %}
+    {% if page_obj.number|add:-1 > 0 %}
+    <div class="f_h_pagination_two marg10">
+        <a href="?{{ subquery }}page={{ page_obj.number|add:-1 }}">{{ page_obj.number|add:-1 }}</a>
+    </div>
+    {% endif %}
+    <div class="f_h_pagination_three marg10">
+        {{ page_obj.number }}
+    </div>
+    {% if page_obj.number|add:+0 < page_obj.paginator.num_pages %}
+    <div class="f_h_pagination_four marg10">
+        <a href="?{{ subquery }}page={{ page_obj.number|add:+1 }}">{{ page_obj.number|add:+1 }}</a>
+    </div>
+    {% endif %}
+    {% if page_obj.number|add:+1 < page_obj.paginator.num_pages %}
+    <div class="f_h_pagination_five marg10">
+        <a href="?{{ subquery }}page={{ page_obj.number|add:+2 }}">{{ page_obj.number|add:+2 }}</a>
+    </div>
+    {% endif %}
+    {% if page_obj.number|add:+3 < page_obj.paginator.num_pages %}
+    <div class="f_h_pagination_right_dots marg10">
+    ...
+    </div>
+    {% endif %}
+    {% if page_obj.number|add:+2 < page_obj.paginator.num_pages %}
+    <div class="f_h_pagination_right_last marg10">
+        <a href="?{{ subquery }}page={{ page_obj.paginator.num_pages }}">{{page_obj.paginator.num_pages }}</a>
+    </div>
+    {% endif %}
+    
+    <div class="f_h_pagination_right_arrow marg10">
+        {% if page_obj.number < page_obj.paginator.num_pages %}
+        <a href="?{{ subquery }}page={{ page_obj.next_page_number }}">
+            <div class="f_h_pagination_next">Next</div>
+            <img class="f_h_pagination_right_arrow_img" src="{% static 'media/icons8-right-arrow-50.png' %}"/>
+        </a>
+        {% else %}
+        <div class="f_h_pagination_next darkgray">Next</div>
+        <img class="f_h_pagination_right_arrow_img" src="{% static 'media/icons8-right-arrow-50.png' %}"/>
+        {% endif %}
+    </div>
+    
+</div>

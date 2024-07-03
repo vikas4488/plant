@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{%load static %}
+{% block content%}
+<div class="f_h_page_item_single_wrap_out_single"><!--this div will be reaeated-->
+    <div class="f_h_page_item_single_wrap_in">
+        <div class="f_h_page_item_single_image_wrap">
+            <div class="f_h_page_item_single_image_single ">
+                <img class="f_h_page_item_single_image_img" src="{{flower.image.url}}"/>
+            </div>
+        </div>
+        <div class="f_h_page_item_single_offlike_wrap_single">
+            <div class="f_h_page_item_single_off_wrap">
+                <div class="f_h_page_item_single_off">
+                    {{flower.offvalue}}% off
+                </div>
+            </div>
+            <div class="f_h_page_item_single_like_wrap">
+                <form class="fav_from_class">
+                    {% csrf_token %}
+                    <input type="hidden" name="flowerob_id" value="{{flower.id}}" />
+                    <div class="f_h_page_item_single_like {{flower.is_favorite}}">
+                        <img class="f_h_page_item_single_like_img" src="{% static 'media/icons8-heart-50.png' %}"/>
+                        <img class="f_h_page_item_single_like_red_img" src="{% static 'media/icons8-red-heart-50.png' %}"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="f_h_page_item_single_product_info">
+            {{flower.name}}
+        </div>
+        <div class="f_h_page_item_single_price_newold">
+            <div class="f_h_page_item_single_price_new">
+            Rs. {{flower.new_price}}
+            </div>
+            <div class="f_h_page_item_single_price_old">
+            Rs. {{flower.price}}
+            </div>
+        </div>
+        <form>
+            {% csrf_token %}
+            <input type="hidden" name="flowerob_id" value="{{flower.id}}" />
+            <div class="f_h_page_item_single_add_to_cart_wrap {{flower.is_carted}}">
+                <img class="f_h_page_item_single_add_to_cart_img" src="{% static 'media/icons8-cart-50.png' %}"/>
+                <div class="f_h_page_item_single_add_to_cart">
+                    add to cart
+                </div>
+                <div class="f_h_page_item_single_remove_from_cart">
+                    remove
+                </div>
+            </div>
+        </form>
+    </div>
+</div><!--this div will be reaeated end here-->
+
+
+{% endblock content%}
