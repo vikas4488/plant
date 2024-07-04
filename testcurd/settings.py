@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-vt8z9=akmxf0dpo)nvgll+n!^4@))iq3uz0s(1nx4a&#g&$@+a
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'yourdomain.com',  # Replace with your actual domain
+    'vikas04488.pythonanywhere.com',  # Replace with your actual domain
     'localhost',
     '127.0.0.1',
 ]
@@ -89,10 +89,10 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'fldb',
-        'USER':'root',
-        'PASSWORD':'root',
-        'HOST':'localhost',
+        'NAME': 'vikas04488$plantdb',
+        'USER':'vikas04488',
+        'PASSWORD':'tango@04488',
+        'HOST':'vikas04488.mysql.pythonanywhere-services.com',
         'PORT':'3306',
     }
 }
@@ -131,23 +131,24 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_URL = '/static/'
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 #STATICFILES_DIRS = [os.path.join(BASE_DIR, 'staticfiles')]
-# Base url to serve media files
+#MEDIA_URL = '/media/'
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+MEDIA_ROOT = '/home/vikas04488/plant/bubble/static/media'
 MEDIA_URL = '/media/'
-# Path where media is stored
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+STATIC_ROOT = '/home/vikas04488/plant/bubble/static'
+STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_USE_TLS = True  
-EMAIL_HOST = 'smtp.gmail.com'  
-EMAIL_HOST_USER = 'vikas04488@gmail.com'  
-EMAIL_HOST_PASSWORD = '********'  
-EMAIL_PORT = 587 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'vikas04488@gmail.com'
+EMAIL_HOST_PASSWORD = '********'
+EMAIL_PORT = 587
 
 LOGIN_URL='/flowerhome'
 LOGIN_REDIRECT_URL='/path/to/redirecturl'
@@ -155,7 +156,7 @@ PHONEPE_MID = 'PGTESTPAYUAT77'
 PHONEPE_SALT_INDEX = '1'
 PHONEPE_SALT_KEY = '14fa5465-f8a7-443f-8477-f986b8fcfde9'
 PHONEPE_BASE_URL = 'https://api-preprod.phonepe.com/apis/pg-sandbox'
-PHONEPE_REDIRECT_URL = 'http://127.0.0.1:8000/callback'
+PHONEPE_REDIRECT_URL = 'https://vikas04488.pythonanywhere.com/callback'
 
 handler404 = 'bubble.views.custom_404'
 
